@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CALL ME IF YOU GET LOST: Tyler, The Creator Archive</title>
+<style>
+  /* 기본 초기화 */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Noto Sans KR', sans-serif; /* 한국어 폰트 최적화 */
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  ul {
+    list-style: none;
+  }
+
+  /* 헤더 (화면 전체 너비) */
+  header {
+    background-color: #fff;
+    color: #fff;
+    padding: 1.2rem 0;
+  }
+  .header-inner { /* 헤더 내부 콘텐츠 (중앙 정렬) */
+    max-width: 1200px; /* 콘텐츠 최대 너비 */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* 반응형 대비 좌우 내부 패딩 */
+  }
+  header .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  header .logo a {
+    color: #0C5C00;
+  }
+
+  /* 내비게이션 (화면 전체 너비) */
+  nav {
+    background-color: #0C5C00;
+    padding: 0.7rem 0;
+  }
+  nav ul { /* 내비게이션 메뉴 (중앙 정렬) */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 20px;
+  }
+  nav li {
+    font-weight: 600;
+  }
+  nav a {
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover,
+  nav a.active { /* 활성화 및 호버 시 강조 색상 */
+    color: #FDE101;
+    border-bottom: 2px solid #FDE101;
+    padding-bottom: 2px;
+  }
+
+  /* 메인 콘텐츠 영역 (10단 그리드, 좌우 100px 마진) */
+  .main-container-grid {
+    max-width: 1400px; /* 콘텐츠 너비 (1200px) + 좌우 마진 (200px) */
+    margin: 2rem auto;
+    padding: 0 100px; /* 요청하신 좌우 100px 마진 */
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10단 그리드 */
+    grid-gap: 20px; /* 컬럼 간 간격 */
+  }
+
+  /* 메인 콘텐츠 섹션 (그리드 전체 폭 사용) */
+  .main-content-section {
+    grid-column: 1 / -1; /* 10단 그리드 전체에 걸쳐 배치 */
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 { font-size: 2.5rem; margin-bottom: 1.2rem; color: #0C5C00; text-align: center; }
+  h2 { font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+  p { font-size: 1.1rem; margin-bottom: 1rem; }
+  img { max-width: 100%; height: auto; display: block; }
+  .highlight-img { margin-top: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+
+  /* 푸터 (화면 전체 너비) */
+  footer {
+    background-color: #222;
+    color: #aaa;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+  .footer-inner { /* 푸터 내부 콘텐츠 (중앙 정렬) */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  /* 반응형 설정 */
+  /* 태블릿 */
+  @media (max-width: 1024px) {
+    .main-container-grid {
+      padding: 0 50px; /* 좌우 마진 50px로 축소 */
+      grid-gap: 15px;
+    }
+    header .logo { font-size: 1.6rem; }
+    nav ul { gap: 1.5rem; }
+    h1 { font-size: 2.2rem; }
+  }
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+    .header-inner, nav ul, .footer-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+    nav ul { padding: 0 10px; }
+    nav li { width: 100%; text-align: center; }
+    nav a { display: block; padding: 0.5rem 0; }
+
+    .main-container-grid {
+      padding: 0 20px; /* 좌우 마진 20px로 더 축소 */
+      grid-template-columns: 1fr; /* 1단 그리드 */
+      grid-gap: 10px;
+      margin: 1rem auto;
+    }
+    .main-content-section {
+        padding: 1.5rem;
+    }
+    h1 { font-size: 2rem; margin-bottom: 1rem; }
+    h2 { font-size: 1.5rem; }
+    p { font-size: 1rem; }
+    header .logo { font-size: 1.4rem; }
+    footer { padding: 1rem 0; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" width="250px"></a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="ALBUM.html">ALBUM</a></li> 
+      <li><a href="art.html">ART</a></li>
+      <li><a href="NARRATIVE.html">NARRATIVE</a></li>
+      <li><a href="FASHION.html">FASHION</a></li>
+      <li><a href="TOURS.html">TOURS</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-container-grid">
+    <main class="main-content-section">
+      <h1>Tyler, The Creator Archive</h1>
+      <p>타일러 더 크리에이터의 음악과 비주얼, 패션, 서사, 투어를 한 눈에 볼 수 있는 아카이브에 오신 것을 환영합니다.</p>
+      <p>상단 메뉴에서 각 영역을 선택해 다양한 콘텐츠를 만나보세요.</p>
+      <img src="tyler, the creator.jpg" class="highlight-img">
+
+      <h2>Tyler, The Creator 소개</h2>
+      <p>타일러 더 크리에이터 (Tyler, The Creator)는 캘리포니아 출신의 래퍼, 송라이터, 프로듀서, 뮤직비디오 감독, 패션 디자이너입니다. 그는 독창적인 음악 스타일과 개성 넘치는 비주얼 아트를 통해 전 세계적인 팬덤을 구축했으며, 힙합씬에 큰 영향을 미치고 있습니다. 그의 앨범들은 그래미 어워드 '최우수 랩 앨범'을 수상하며 음악적 깊이도 인정받고 있습니다.</p>
+      <p>이 웹사이트는 타일러의 방대한 작업들을 체계적으로 아카이빙하고, 그의 예술 세계를 심층적으로 탐험할 수 있는 디지털 공간입니다.</p>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2025 Tyler, The Creator Archive. All Rights Reserved.</p>
+      <p>Designed and Developed by Leejimmin</p>
+    </div>
+  </footer>
+</body>
+</html>
