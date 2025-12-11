@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Album - Tyler, The Creator Archive</title>
+<!-- 위 [1. 공통 CSS 코드]를 여기에 복사해서 붙여넣으세요 -->
+<style>
+     * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Noto Sans KR', sans-serif; /* 한국어 폰트 최적화 */
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  ul {
+    list-style: none;
+  }
+
+  /* 헤더 (화면 전체 너비) */
+  header {
+    background-color: #fff;
+    color: #fff;
+    padding: 1.2rem 0;
+  }
+  .header-inner { /* 헤더 내부 콘텐츠 (중앙 정렬) */
+    max-width: 1200px; /* 콘텐츠 최대 너비 */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* 반응형 대비 좌우 내부 패딩 */
+  }
+  header .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  header .logo a {
+    color: #0C5C00;
+  }
+
+  /* 내비게이션 (화면 전체 너비) */
+  nav {
+    background-color: #0C5C00;
+    padding: 0.7rem 0;
+  }
+  nav ul { /* 내비게이션 메뉴 (중앙 정렬) */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 20px;
+  }
+  nav li {
+    font-weight: 600;
+  }
+  nav a {
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover,
+  nav a.active { /* 활성화 및 호버 시 강조 색상 */
+    color: #FDE101;
+    border-bottom: 2px solid #FDE101;
+    padding-bottom: 2px;
+  }
+
+  /* 메인 콘텐츠 영역 (10단 그리드, 좌우 100px 마진) */
+  .main-container-grid {
+    max-width: 1400px; /* 콘텐츠 너비 (1200px) + 좌우 마진 (200px) */
+    margin: 2rem auto;
+    padding: 0 100px; /* 요청하신 좌우 100px 마진 */
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10단 그리드 */
+    grid-gap: 20px; /* 컬럼 간 간격 */
+  }
+
+  /* 메인 콘텐츠 섹션 (그리드 전체 폭 사용) */
+  .main-content-section {
+    grid-column: 1 / -1; /* 10단 그리드 전체에 걸쳐 배치 */
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 { font-size: 2.5rem; margin-bottom: 1.2rem; color: #0C5C00; text-align: center; }
+  h2 { font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+  p { font-size: 1.1rem; margin-bottom: 1rem; }
+  img { max-width: 100%; height: auto; display: block; }
+  .highlight-img { margin-top: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+
+  /* 푸터 (화면 전체 너비) */
+  footer {
+    background-color: #222;
+    color: #aaa;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+  .footer-inner { /* 푸터 내부 콘텐츠 (중앙 정렬) */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  /* 반응형 설정 */
+  /* 태블릿 */
+  @media (max-width: 1024px) {
+    .main-container-grid {
+      padding: 0 50px; /* 좌우 마진 50px로 축소 */
+      grid-gap: 15px;
+    }
+    header .logo { font-size: 1.6rem; }
+    nav ul { gap: 1.5rem; }
+    h1 { font-size: 2.2rem; }
+  }
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+    .header-inner, nav ul, .footer-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+    nav ul { padding: 0 10px; }
+    nav li { width: 100%; text-align: center; }
+    nav a { display: block; padding: 0.5rem 0; }
+
+    .main-container-grid {
+      padding: 0 20px; /* 좌우 마진 20px로 더 축소 */
+      grid-template-columns: 1fr; /* 1단 그리드 */
+      grid-gap: 10px;
+      margin: 1rem auto;
+    }
+    .main-content-section {
+        padding: 1.5rem;
+    }
+    h1 { font-size: 2rem; margin-bottom: 1rem; }
+    h2 { font-size: 1.5rem; }
+    p { font-size: 1rem; }
+    header .logo { font-size: 1.4rem; }
+    footer { padding: 1rem 0; }
+  }
+  /* ... 공통 CSS 코드 ... */
+  /* Album 페이지 전용 스타일 */
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .album-item {
+    background:#fff;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    overflow:hidden;
+    text-align:center;
+    transition:transform 0.3s ease;
+  }
+  .album-item:hover {transform:translateY(-5px);}
+  .album-item img {width:100%; height:auto; display:block;}
+  .album-title {font-size:1.2rem; margin:0.75rem 0 0.25rem; color:#222; font-weight:700;}
+  .album-info {font-size:0.9rem; color:#666; margin-bottom:1rem;}
+
+  /* 모바일에서 앨범 그리드 조절 */
+  @media (max-width: 768px) {
+    .album-grid {
+      grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); /* 모바일에서 더 작은 크기로 */
+      gap: 1rem;
+    }
+    .album-title { font-size: 1rem; }
+    .album-info { font-size: 0.8rem; }
+  } 
+
+  .album-item {
+  position: relative;
+  width: 280px;
+  cursor: pointer;
+}
+
+.album-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 이미지 영역 */
+.album-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* 기본 이미지: 컬러 (filter X), 약간 확대 */
+.album-image-wrapper img {
+  width: 100%;
+  display: block;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* hover 시 이미지: 흑백 + 살짝 더 확대 */
+.album-item:hover img {
+  filter: grayscale(100%);
+  transform: scale(1.12);
+}
+
+/* 아래 텍스트는 그대로 유지 */
+.album-title,
+.album-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* 요약 정보 박스 */
+.summary-info {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 15px 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease, bottom 0.35s ease;
+  border-radius: 0 0 12px 12px;
+}
+
+/* summary-info 내부 텍스트 */
+.summary-info h4 {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.summary-info p {
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+/* hover 시 요약 정보 등장 */
+.album-item:hover .summary-info {
+  opacity: 1;
+  transform: translateY(0);
+  bottom: 0;
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" width="250px"></a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="ALBUM.html" class="active">ALBUM</a></li>
+      <li><a href="art.html">ART</a></li>
+      <li><a href="NARRATIVE.html">NARRATIVE</a></li>
+      <li><a href="FASHION.html">FASHION</a></li>
+      <li><a href="TOURS.html">TOURS</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-container-grid">
+    <main class="main-content-section">
+      <h1>ALBUM</h1>
+      <p style="text-align: center; margin-bottom: 2rem;">타일러 더 크리에이터의 정규 앨범 및 주요 작업들을 한눈에 살펴보세요.</p>
+      
+      <div class="album-grid">
+        <article class="album-item">
+          <div class="album-image-wrapper">
+            <img src="BASTARDCOVER.png">
+            <div class="summary-info">
+            <h4>Bastard</h4>
+            <p>타일러의 2009년 데뷔 앨범. 날것의 호러코어 사운드와 충격적인 주제 의식이 담긴 작품.</p>
+            </div>
+            </div>
+            <h3 class="album-title">Bastard</h3>
+            <p class="album-info">2009 | Self-released</p>
+          </a>
+        </article>
+
+        <article class="album-item">
+          <div class="album-image-wrapper">
+            <img src="goblin.jpg">
+            <div class="summary-info">
+            <h4>goblin</h4>
+            <p>타일러의 2011년 정규 앨범. 어두운 내러티브와 더 정교해진 프로덕션으로 논란을 이어간 작품</p>
+            </div>
+            </div>
+            <h3 class="album-title">Goblin</h3>
+            <p class="album-info">2011 | XL Recordings, Odd Future Records</p>
+          </a>
+        </article>
+
+        <article class="album-item">
+          <div class="album-image-wrapper">
+            <img src="wolf.jpg">
+            <div class="summary-info">
+            <h4>wolf</h4>
+            <p> 타일러의 2013년 정규 앨범. 이전보다 확장된 음악적 스펙트럼과 서사적 깊이를 보여준 전환점</p>
+            </div>
+            </div>
+            <h3 class="album-title">Wolf</h3>
+            <p class="album-info">2013 | Odd Future Records, Columbia Records</p>
+          </a>
+        </article>
+
+        <article class="album-item">
+          <div class="album-image-wrapper">
+            <img src="cherry bomb.png">
+            <div class="summary-info">
+            <h4>Cherry Bomb</h4>
+            <p>타일러의 2015년 정규 앨범. 재즈, 펑크 등 다양한 장르를 실험하며 더욱 도전적인 사운드</p>
+            </div>
+            </div>
+            <h3 class="album-title">Cherry Bomb</h3>
+            <p class="album-info">2015 | Columbia Records, Odd Future Records</p>
+          </a>
+        </article>
+
+        <article class="album-item">
+          <div class="album-image-wrapper">
+            <img src="Flower Boy.jpg">
+            <div class="summary-info">
+            <h4>Flower Boy</h4>
+            <p>타일러의 2017년 정규 앨범. 내면적인 성찰과 아름다운 사운드가 조화를 이루며 음악적 전환을 이뤄낸 수작</p>
+            </div>
+            </div>
+            <h3 class="album-title">Flower Boy</h3>
+            <p class="album-info">2017 | Columbia Records</p>
+          </a>
+        </article>
+
+        <article class="album-item">
+          <div class="album-image-wrapper">
+            <img src="Igor.jpg">
+            <div class="summary-info">
+            <h4>IGOR</h4>
+            <p>타일러의 2019년 정규 앨범. 사랑과 이별의 서사를 감각적인 신스팝 사운드로 표현하며 그래미상을 수상</p>
+            </div>
+            </div>
+            <h3 class="album-title">IGOR</h3>
+            <p class="album-info">2019 | Columbia Records</p>
+          </a>
+        </article>
+
+        <article class="album-item">
+          <div class="album-image-wrapper">
+            <img src="Call Me If You Get Lost.webp">
+            <div class="summary-info">
+            <h4>Call Me If You Get Lost</h4>
+            <p>타일러의 2021년 정규 앨범. 풍부한 샘플링과 여행 콘셉트가 어우러져 깊이 있는 서사를 펼쳐낸 작품</p>
+            </div>
+            </div>
+            <h3 class="album-title">Call Me If You Get Lost</h3>
+            <p class="album-info">2021 | Columbia Records</p>
+          </a>
+        </article>
+
+          <article class="album-item">
+          <div class="album-image-wrapper">
+            <img src="chromakopia.jpg" alt="Chromakopia Album Cover">
+            <div class="summary-info">
+            <h4>Chromakopia</h4>
+            <p>타일러의 2024년 정규 앨범. 더 깊어진 사운드와 디렉팅으로 타일러의 음악적 성장</p>
+            </div>
+            </div>
+            <h3 class="album-title">Chromakopia</h3>
+            <p class="album-info">2024 | Columbia Records</p>
+          </a>
+        </article>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; 2025 Tyler, The Creator Archive. All Rights Reserved.</p>
+      <p>Designed and Developed by Leejimin</p>
+    </div>
+  </footer>
+</body>
+</html>

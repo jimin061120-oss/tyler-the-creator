@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CALL ME IF YOU GET LOST: Tyler, The Creator Archive</title>
+<title>ART - Tyler, The Creator Archive</title>
 <style>
-  /* 기본 초기화 */
-  * {
+  /* 공통 스타일 생략, album.html과 동일하게 적용 가능 */
+ * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
   body {
@@ -151,6 +151,45 @@
     header .logo { font-size: 1.4rem; }
     footer { padding: 1rem 0; }
   }
+
+   .art-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  figure {
+    background:#fff;
+    border-radius:8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  figure:hover { transform: translateY(-5px); }
+  figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  figcaption {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: #555;
+  }
+  figcaption p {
+    margin-top: 0.3rem;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  /* 모바일에서 갤러리 그리드 조절 */
+  @media (max-width: 768px) {
+    .art-gallery {
+      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+      gap: 1rem;
+    }
+  }
 </style>
 </head>
 <body>
@@ -164,7 +203,7 @@
 
   <nav>
     <ul>
-      <li><a href="ALBUM.html">ALBUM</a></li> 
+      <li><a href="ALBUM.html" class="active">ALBUM</a></li>
       <li><a href="art.html">ART</a></li>
       <li><a href="NARRATIVE.html">NARRATIVE</a></li>
       <li><a href="FASHION.html">FASHION</a></li>
@@ -174,21 +213,30 @@
 
   <div class="main-container-grid">
     <main class="main-content-section">
-      <h1>Tyler, The Creator Archive</h1>
-      <p>타일러 더 크리에이터의 음악과 비주얼, 패션, 서사, 투어를 한 눈에 볼 수 있는 아카이브에 오신 것을 환영합니다.</p>
-      <p>상단 메뉴에서 각 영역을 선택해 다양한 콘텐츠를 만나보세요.</p>
-      <img src="tyler, the creator.jpg" class="highlight-img">
+      <h1>ART</h1>
+      <p style="text-align: center; margin-bottom: 2rem;">타일러 더 크리에이터의 독창적인 시각 예술 작품</p>
 
-      <h2>Tyler, The Creator 소개</h2>
-      <p>타일러 더 크리에이터 (Tyler, The Creator)는 캘리포니아 출신의 래퍼, 송라이터, 프로듀서, 뮤직비디오 감독, 패션 디자이너입니다. 그는 독창적인 음악 스타일과 개성 넘치는 비주얼 아트를 통해 전 세계적인 팬덤을 구축했으며, 힙합씬에 큰 영향을 미치고 있습니다. 그의 앨범들은 그래미 어워드 '최우수 랩 앨범'을 수상하며 음악적 깊이도 인정받고 있습니다.</p>
-      <p>이 웹사이트는 타일러의 방대한 작업들을 체계적으로 아카이빙하고, 그의 예술 세계를 심층적으로 탐험할 수 있는 디지털 공간입니다.</p>
+      <div class="art-gallery">
+        <figure>
+          <img src="EARFQUAKE.jpg" alt="뮤직비디오 아트워크" />
+          <figcaption>“EARFQUAKE” 뮤직비디오<p>IGOR 앨범의 대표 비주얼</p></figcaption>
+        </figure>
+        <figure>
+          <img src="wolf.jpg" alt="WOLF 앨범 아트워크" />
+          <figcaption>WOLF 앨범 아트워크<p>타일러의 초기 페르소나</p></figcaption>
+        </figure>
+        <figure>
+          <img src="GOLF WANG.jpg" alt="GOLF WANG 비주얼" />
+          <figcaption>GOLF WANG 캠페인 비주얼<p>패션 브랜드의 정체성</p></figcaption>
+        </figure>
+      </div>
     </main>
   </div>
 
   <footer>
     <div class="footer-inner">
       <p>&copy; 2025 Tyler, The Creator Archive. All Rights Reserved.</p>
-      <p>Designed and Developed by Leejimmin</p>
+      <p>Designed and Developed by Leejimin</p>
     </div>
   </footer>
 </body>

@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CALL ME IF YOU GET LOST: Tyler, The Creator Archive</title>
+<title>NARRATIVE - Tyler, The Creator Archive</title>
+<!-- 위 [1. 공통 CSS 코드]를 여기에 복사해서 붙여넣으세요 -->
 <style>
   /* 기본 초기화 */
   * {
@@ -151,6 +152,70 @@
     header .logo { font-size: 1.4rem; }
     footer { padding: 1rem 0; }
   }
+  /* ... 공통 CSS 코드 ... */
+  /* NARRATIVE 페이지 전용 스타일 */
+  .timeline {
+    position: relative;
+    padding: 1rem 0 0 1rem;
+    margin-top: 1rem;
+  }
+  .timeline::before { /* 타임라인 중앙선 */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #0C5C00;
+  }
+  .timeline-item {
+    position: relative;
+    margin-left: 2rem;
+    padding-bottom: 2rem;
+    color: #555;
+  }
+  .timeline-item::before { /* 타임라인 점 */
+    content: '';
+    position: absolute;
+    left: -60px;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    background: #0C5C00;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #0C5C00;
+  }
+  .timeline-item h2 {
+    color: #222;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    border-bottom: none;
+    font-size: 1.5rem;
+  }
+  .timeline-item time {
+    display: block;
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+  }
+  .timeline-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+  .timeline-item img {
+      margin-top: 1rem;
+      border-radius: 8px;
+  }
+  /* 모바일 타임라인 조절 */
+  @media (max-width: 768px) {
+    .timeline { padding-left: 0.5rem; }
+    .timeline-item { margin-left: 1.5rem; padding-bottom: 1.5rem; }
+    .timeline-item h2 { font-size: 1.3rem; }
+    .timeline-item p { font-size: 0.95rem; }
+    .timeline-item::before { left: -8px; width: 16px; height: 16px; }
+  }
 </style>
 </head>
 <body>
@@ -164,7 +229,7 @@
 
   <nav>
     <ul>
-      <li><a href="ALBUM.html">ALBUM</a></li> 
+      <li><a href="ALBUM.html" class="active">ALBUM</a></li>
       <li><a href="art.html">ART</a></li>
       <li><a href="NARRATIVE.html">NARRATIVE</a></li>
       <li><a href="FASHION.html">FASHION</a></li>
@@ -174,21 +239,45 @@
 
   <div class="main-container-grid">
     <main class="main-content-section">
-      <h1>Tyler, The Creator Archive</h1>
-      <p>타일러 더 크리에이터의 음악과 비주얼, 패션, 서사, 투어를 한 눈에 볼 수 있는 아카이브에 오신 것을 환영합니다.</p>
-      <p>상단 메뉴에서 각 영역을 선택해 다양한 콘텐츠를 만나보세요.</p>
-      <img src="tyler, the creator.jpg" class="highlight-img">
+      <h1>NARRATIVE</h1>
+      <p style="text-align: center; margin-bottom: 2rem;">타일러 더 크리에이터의 음악 여정과 그가 만든 세계관의 핵심 이야기</p>
+      
+      <div class="timeline">
+        <article class="timeline-item">
+          <h2>초기 생애와 음악적 시작</h2>
+          <time datetime="2007-01-01">2007 - Odd Future 결성</time>
+          <p>타일러는 캘리포니아에서 태어나 청소년 시절부터 음악 제작과 프로듀싱에 관심을 가지기 시작했다. 2007년, 친구들과 함께 대안 힙합 그룹 Odd Future를 결성하며 언더그라운드 씬에 큰 파장을 일으켰다.</p>
+          <img src="ODD-Future-Emblem.jpg" width="225px">
+        </article>
 
-      <h2>Tyler, The Creator 소개</h2>
-      <p>타일러 더 크리에이터 (Tyler, The Creator)는 캘리포니아 출신의 래퍼, 송라이터, 프로듀서, 뮤직비디오 감독, 패션 디자이너입니다. 그는 독창적인 음악 스타일과 개성 넘치는 비주얼 아트를 통해 전 세계적인 팬덤을 구축했으며, 힙합씬에 큰 영향을 미치고 있습니다. 그의 앨범들은 그래미 어워드 '최우수 랩 앨범'을 수상하며 음악적 깊이도 인정받고 있습니다.</p>
-      <p>이 웹사이트는 타일러의 방대한 작업들을 체계적으로 아카이빙하고, 그의 예술 세계를 심층적으로 탐험할 수 있는 디지털 공간입니다.</p>
+        <article class="timeline-item">
+          <h2>솔로 데뷔와 페르소나의 구축</h2>
+          <time datetime="2011-05-10">2011 - GOBLIN 발매</time>
+          <p>첫 솔로 앨범 'GOBLIN'을 발표하며 자신만의 독특하고 충격적인 페르소나와 음악적 세계를 대중에게 각인시켰다. 논란의 중심에 서기도 했지만, 그의 천재성은 부인할 수 없었다.</p>
+          <img src="goblin.jpg">
+        </article>
+
+        <article class="timeline-item">
+          <h2>음악적 스펙트럼 확장</h2>
+          <time datetime="2017-07-21">2017 - FLOWER BOY 발매</time>
+          <p>'FLOWER BOY' 앨범을 통해 이전과는 다른 서정적이고 감성적인 음악을 선보이며 음악적 스펙트럼을 넓혔다. 평단의 극찬을 받으며 타일러가 단순한 문제아가 아닌, 진정한 아티스트임을 증명했다.</p>
+          <img src="Flower Boy.jpg" alt="Flower Boy album visual">
+        </article>
+
+        <article class="timeline-item">
+          <h2>예술성의 정점과 그래미 수상</h2>
+          <time datetime="2019-05-17">2019 - IGOR 발매</time>
+          <p>앨범 'IGOR'는 음악, 비주얼, 스토리텔링이 완벽하게 결합된 하나의 예술 작품으로 평가받았다. 이 앨범으로 그는 그래미 어워드 '최우수 랩 앨범'을 수상하며, 아티스트로서의 입지를 확고히 했다.</p>
+          <img src="Igor.jpg">
+        </article>
+      </div>
     </main>
   </div>
 
   <footer>
     <div class="footer-inner">
       <p>&copy; 2025 Tyler, The Creator Archive. All Rights Reserved.</p>
-      <p>Designed and Developed by Leejimmin</p>
+      <p>Designed and Developed by Leejimin</p>
     </div>
   </footer>
 </body>

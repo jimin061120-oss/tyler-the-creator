@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CALL ME IF YOU GET LOST: Tyler, The Creator Archive</title>
-<style>
-  /* 기본 초기화 */
+<title>TOURS - Tyler, The Creator Archive</title>
+<!-- 위 [1. 공통 CSS 코드]를 여기에 복사해서 붙여넣으세요 -->
+<style> 
+
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
@@ -151,6 +152,50 @@
     header .logo { font-size: 1.4rem; }
     footer { padding: 1rem 0; }
   }
+  /* ... 공통 CSS 코드 ... */
+  /* TOURS 페이지 전용 스타일 */
+  .tour-details {
+    background:#fff;
+    border-radius:8px;
+    box-shadow:0 3px 7px rgba(0,0,0,0.1);
+    margin-bottom:1.5rem;
+    padding:1.5rem;
+    color:#555;
+  }
+  .tour-summary {
+    font-weight: 700;
+    font-size:1.4rem;
+    color:#222;
+    margin-bottom: 0.8rem;
+    cursor:pointer; /* 요약임을 강조 */
+  }
+  .tour-summary:hover {
+    color: #0C5C00;
+  }
+  .tour-info {
+    margin-top:0.8rem;
+    font-size:1rem;
+    line-height: 1.6;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+  }
+  .tour-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .tour-images-grid img {
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  /* 모바일 투어 그리드 조절 */
+  @media (max-width: 768px) {
+    .tour-images-grid {
+      grid-template-columns: 1fr; /* 모바일에서는 1단으로 쌓이게 */
+      gap: 0.8rem;
+    }
+  }
 </style>
 </head>
 <body>
@@ -164,7 +209,7 @@
 
   <nav>
     <ul>
-      <li><a href="ALBUM.html">ALBUM</a></li> 
+      <li><a href="ALBUM.html" class="active">ALBUM</a></li>
       <li><a href="art.html">ART</a></li>
       <li><a href="NARRATIVE.html">NARRATIVE</a></li>
       <li><a href="FASHION.html">FASHION</a></li>
@@ -174,21 +219,41 @@
 
   <div class="main-container-grid">
     <main class="main-content-section">
-      <h1>Tyler, The Creator Archive</h1>
-      <p>타일러 더 크리에이터의 음악과 비주얼, 패션, 서사, 투어를 한 눈에 볼 수 있는 아카이브에 오신 것을 환영합니다.</p>
-      <p>상단 메뉴에서 각 영역을 선택해 다양한 콘텐츠를 만나보세요.</p>
-      <img src="tyler, the creator.jpg" class="highlight-img">
+      <h1>TOURS</h1>
+      <p style="text-align: center; margin-bottom: 2rem;">타일러 더 크리에이터의 열정적인 라이브 퍼포먼스와 투어 기록</p>
+      
+      <details class="tour-details" open> <!-- open 속성으로 기본적으로 열리도록 설정 -->
+        <summary class="tour-summary">CALL ME IF YOU GET LOST TOUR (2022)</summary>
+        <div class="tour-info">
+          <p>2022년 초, 북미 전역을 아우르며 진행된 성공적인 투어. 앨범의 스토리를 담은 독특한 무대 연출과 퍼포먼스가 특징이었습니다. 수많은 팬들의 환호 속에서 타일러의 존재감을 다시 한번 입증한 투어입니다.</p>
+          <div class="tour-images-grid">
+            <img src="TOURS1.webp " alt="LA 콘서트 이미지" />
+            <img src="TOURS2.webp" alt="뉴욕 콘서트 이미지" />
+            <img src="TOURS3.webp" alt="무대 연출 이미지" />
+          </div>
+          <p style="margin-top:1rem;"><b>주요 공연 도시:</b> 로스앤젤레스, 뉴욕, 시카고, 토론토 등</p>
+        </div>
+      </details>
 
-      <h2>Tyler, The Creator 소개</h2>
-      <p>타일러 더 크리에이터 (Tyler, The Creator)는 캘리포니아 출신의 래퍼, 송라이터, 프로듀서, 뮤직비디오 감독, 패션 디자이너입니다. 그는 독창적인 음악 스타일과 개성 넘치는 비주얼 아트를 통해 전 세계적인 팬덤을 구축했으며, 힙합씬에 큰 영향을 미치고 있습니다. 그의 앨범들은 그래미 어워드 '최우수 랩 앨범'을 수상하며 음악적 깊이도 인정받고 있습니다.</p>
-      <p>이 웹사이트는 타일러의 방대한 작업들을 체계적으로 아카이빙하고, 그의 예술 세계를 심층적으로 탐험할 수 있는 디지털 공간입니다.</p>
+      <details class="tour-details">
+        <summary class="tour-summary">IGOR TOUR (2019)</summary>
+        <div class="tour-info">
+          <p>그래미 수상 앨범 'IGOR'를 기념하며 진행된 투어. 아이고르 페르소나를 완벽하게 구현한 분장과 연기가 인상 깊었습니다. 전 세계 팬들과 소통하며 예술성을 더욱 확장한 계기가 되었습니다.</p>
+          <div class="tour-images-grid">
+            <img src="TOURS4.jpg" alt="IGOR 투어 마스크" />
+            <img src="TOURS5.jpg" alt="IGOR 투어 퍼포먼스" />
+          </div>
+          <p style="margin-top:1rem;"><b>주요 공연 도시:</b> 런던, 파리, 베를린, 도쿄 등</p>
+        </div>
+      </details>
+
     </main>
   </div>
 
   <footer>
     <div class="footer-inner">
       <p>&copy; 2025 Tyler, The Creator Archive. All Rights Reserved.</p>
-      <p>Designed and Developed by Leejimmin</p>
+      <p>Designed and Developed by Leejimin</p>
     </div>
   </footer>
 </body>

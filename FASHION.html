@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CALL ME IF YOU GET LOST: Tyler, The Creator Archive</title>
-<style>
-  /* 기본 초기화 */
+<title>FASHION - Tyler, The Creator Archive</title>
+<!-- 위 [1. 공통 CSS 코드]를 여기에 복사해서 붙여넣으세요 -->
+<style> 
+
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
@@ -69,7 +70,7 @@
   nav a:hover,
   nav a.active { /* 활성화 및 호버 시 강조 색상 */
     color: #FDE101;
-    border-bottom: 2px solid #FDE101;
+    border-bottom: 2px solid#FDE101;
     padding-bottom: 2px;
   }
 
@@ -151,6 +152,50 @@
     header .logo { font-size: 1.4rem; }
     footer { padding: 1rem 0; }
   }
+  /* ... 공통 CSS 코드 ... */
+  /* FASHION 페이지 전용 스타일 */
+  .fashion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  .fashion-card {
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.12);
+    overflow:hidden;
+    text-align:center;
+    transition: transform 0.3s ease;
+  }
+  .fashion-card:hover {
+    transform: translateY(-6px);
+  }
+  .fashion-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #eee;
+  }
+  .fashion-info {
+    padding: 1rem;
+  }
+  .fashion-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+  }
+  .fashion-info p {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  /* 모바일 패션 그리드 조절 */
+  @media (max-width: 768px) {
+    .fashion-grid {
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 1.5rem;
+    }
+  }
 </style>
 </head>
 <body>
@@ -164,7 +209,7 @@
 
   <nav>
     <ul>
-      <li><a href="ALBUM.html">ALBUM</a></li> 
+      <li><a href="ALBUM.html" class="active">ALBUM</a></li>
       <li><a href="art.html">ART</a></li>
       <li><a href="NARRATIVE.html">NARRATIVE</a></li>
       <li><a href="FASHION.html">FASHION</a></li>
@@ -174,21 +219,41 @@
 
   <div class="main-container-grid">
     <main class="main-content-section">
-      <h1>Tyler, The Creator Archive</h1>
-      <p>타일러 더 크리에이터의 음악과 비주얼, 패션, 서사, 투어를 한 눈에 볼 수 있는 아카이브에 오신 것을 환영합니다.</p>
-      <p>상단 메뉴에서 각 영역을 선택해 다양한 콘텐츠를 만나보세요.</p>
-      <img src="tyler, the creator.jpg" class="highlight-img">
+      <h1>FASHION</h1>
+      <p style="text-align: center; margin-bottom: 2rem;">타일러 더 크리에이터의 패션 브랜드 GOLF WANG, 각 연도별 패션</p>
+      
+      <div class="fashion-grid">
+        <article class="fashion-card">
+          <img src="GOLF WANG 2021.webp">
+          <div class="fashion-info">
+            <h3>GOLF WANG Fall/Winter 2021</h3>
+            <p>타일러 특유의 컬러감과 스트리트 감성이 돋보이는 가을/겨울 컬렉션.</p>
+          </div>
+        </article>
 
-      <h2>Tyler, The Creator 소개</h2>
-      <p>타일러 더 크리에이터 (Tyler, The Creator)는 캘리포니아 출신의 래퍼, 송라이터, 프로듀서, 뮤직비디오 감독, 패션 디자이너입니다. 그는 독창적인 음악 스타일과 개성 넘치는 비주얼 아트를 통해 전 세계적인 팬덤을 구축했으며, 힙합씬에 큰 영향을 미치고 있습니다. 그의 앨범들은 그래미 어워드 '최우수 랩 앨범'을 수상하며 음악적 깊이도 인정받고 있습니다.</p>
-      <p>이 웹사이트는 타일러의 방대한 작업들을 체계적으로 아카이빙하고, 그의 예술 세계를 심층적으로 탐험할 수 있는 디지털 공간입니다.</p>
+        <article class="fashion-card">
+          <img src="fall-winter-2022-1.jpg">
+          <div class="fashion-info">
+            <h3>GOLF WANG Fall/Winter 2022</h3>
+            <p>타일러의 컬렉션인 다채롭고 화사한 색감, 그리고 개성 있는 아이템 구성이 돋보이는 라인업.</p>
+          </div>
+        </article>
+
+        <article class="fashion-card">
+          <img src="fall-winter-2023.jpg">
+          <div class="fashion-info">
+            <h3>GOLF WANG Fall/Winter 2023</h3>
+            <p>타일러의 독창적인 시각이 반영된 골프왕 2023컬렉션은 개성 강한 스타일과 유니크한 아이템.</p>
+          </div>
+        </article>
+      </div>
     </main>
   </div>
 
   <footer>
     <div class="footer-inner">
       <p>&copy; 2025 Tyler, The Creator Archive. All Rights Reserved.</p>
-      <p>Designed and Developed by Leejimmin</p>
+      <p>Designed and Developed by Leejimin</p>
     </div>
   </footer>
 </body>
